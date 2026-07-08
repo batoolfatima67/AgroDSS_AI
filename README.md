@@ -7,7 +7,7 @@
 
 # Vision
 
-AgroDSS AI aims to develop a comprehensive **AI-powered Agronomist Decision Support System** that integrates **Artificial Intelligence (AI)**, **Geospatial Technologies**, **Remote Sensing**, **Geographic Information Systems (GIS)**, and **Precision Agriculture** into a unified platform.
+AgroDSS_AI aims to develop a comprehensive **AI-powered Agronomist Decision Support System** that integrates **Artificial Intelligence (AI)**, **Geospatial Technologies**, **Remote Sensing**, **Geographic Information Systems (GIS)**, and **Precision Agriculture** into a unified platform.
 
 Our vision is to empower **farmers, agronomists, researchers, agricultural companies, and government organizations** with intelligent, data-driven recommendations that improve productivity, sustainability, and agricultural decision-making.
 
@@ -15,7 +15,7 @@ Our vision is to empower **farmers, agronomists, researchers, agricultural compa
 
 # Description
 
-AgroDSS AI is an intelligent agricultural decision support platform designed to assist stakeholders in making informed farming decisions through the integration of modern digital agriculture technologies.
+AgroDSS_AI is an intelligent agricultural decision support platform designed to assist stakeholders in making informed farming decisions through the integration of modern digital agriculture technologies.
 
 The system combines:
 
@@ -28,7 +28,7 @@ The system combines:
 
 into a single professional desktop-oriented web application.
 
-By integrating farm information, real-time weather data, satellite imagery, vegetation indices (NDVI), and AI-generated agronomic recommendations, AgroDSS AI provides actionable insights to improve crop productivity, optimize resource management, and support sustainable agricultural practices.
+By integrating farm information, real-time weather data, satellite imagery, vegetation indices (NDVI), and AI-generated agronomic recommendations, AgroDSS_AI provides actionable insights to improve crop productivity, optimize resource management, and support sustainable agricultural practices.
 
 ---
 
