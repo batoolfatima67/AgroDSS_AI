@@ -1,6 +1,6 @@
 # AgroDSS_AI
 AgroDSS AI
-AI-Powered Agronomist Decision Support System
+(An AI-Powered Agronomist Decision Support System)
 "Transforming Agricultural Decision-Making through Artificial Intelligence, Remote Sensing, and Precision Agriculture."
 
 Vision:
