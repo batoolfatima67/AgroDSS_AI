@@ -1,46 +1,47 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# ----------------------------------------------------
-# PAGE CONFIGURATION
-# ----------------------------------------------------
+from modules.input_module import render_input_module
+from modules.analysis_engine import run_full_analysis
+from modules.report_generator import generate_report
+from modules.ai_recommendation import render_ai_recommendation
+
+# --------------------------------------------------
+# PAGE CONFIG
+# --------------------------------------------------
 
 st.set_page_config(
-    page_title="AgroDSS AI",
+    page_title="AgriDSS AI",
     page_icon="🌾",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="expanded"
 )
 
-# ----------------------------------------------------
-# LOAD CUSTOM CSS
-# ----------------------------------------------------
+# --------------------------------------------------
+# LOAD CSS
+# --------------------------------------------------
 
 try:
-    with open("assets/css/style.css", encoding="utf-8") as css:
+    with open("styles/main.css") as css:
         st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
-except FileNotFoundError:
+except:
     pass
 
-# ----------------------------------------------------
+# --------------------------------------------------
 # SIDEBAR
-# ----------------------------------------------------
+# --------------------------------------------------
 
 with st.sidebar:
 
     st.markdown(
         """
-        <div style="text-align:center; padding-top:10px;">
-            <h2 style="color:white; margin-bottom:0;">
-                🌾 AgroDSS AI
-            </h2>
+        <h1 style='text-align:center;color:white;margin-bottom:0;'>
+        🌾 AgriDSS AI
+        </h1>
 
-            <p style="color:#E5E7EB; font-size:14px;">
-                AI-Powered Agronomist
-                <br>
-                Decision Support System
-            </p>
-        </div>
+        <p style='text-align:center;color:white;'>
+        Agricultural Intelligence Platform
+        </p>
         """,
         unsafe_allow_html=True,
     )
@@ -49,19 +50,18 @@ with st.sidebar:
         menu_title=None,
 
         options=[
-            "Home",
-            "Farm Input",
+            "Farm Management",
             "Analysis Center",
-            "Reports",
-            "Settings"
+            "AI Advisor",
+            "Reports"
         ],
 
         icons=[
-            "house",
-            "geo-alt",
-            "bar-chart",
-            "file-earmark-text",
-            "gear"
+            "house-fill",
+            "geo-alt-fill",
+            "bar-chart-fill",
+            "robot",
+            "file-earmark-text-fill"
         ],
 
         default_index=0,
@@ -69,112 +69,50 @@ with st.sidebar:
         styles={
             "container": {
                 "padding": "8px",
-                "background": "linear-gradient(180deg,#60A5FA,#3B82F6)",
+                "background-color": "#60A5FA",   # Light Blue
                 "border-radius": "15px",
             },
 
             "icon": {
                 "color": "white",
-                "font-size": "18px",
+                "font-size": "20px",
             },
 
             "nav-link": {
-                "color": "white",
                 "font-size": "16px",
                 "font-weight": "600",
                 "text-align": "left",
-                "margin": "5px 0",
+                "margin": "6px 0",
                 "padding": "12px",
+                "color": "white",
                 "border-radius": "10px",
+                "--hover-color": "#93C5FD",
             },
 
             "nav-link-selected": {
-                "background-color": "#2563EB",
-                "color": "white",
+               "background-color": "#2563EB",
+               "color": "white",
+               "font-weight": "700",
             },
         },
     )
 
-# ----------------------------------------------------
-# HEADER
-# ----------------------------------------------------
+# --------------------------------------------------
+# PAGE ROUTING
+# --------------------------------------------------
 
-st.markdown(
-    """
-<div class="top-header">
+if selected == "Farm Management":
 
-<h2>🌾 AgroDSS AI</h2>
-
-<p>
-AI-Powered Agronomist Decision Support System
-</p>
-
-</div>
-""",
-    unsafe_allow_html=True,
-)
-
-# ----------------------------------------------------
-# HOME PAGE
-# ----------------------------------------------------
-
-if selected == "Home":
-
-    st.title("Welcome")
-
-    st.write(
-        """
-Welcome to **AgroDSS AI**.
-
-An enterprise platform that combines:
-
-- Artificial Intelligence
-- Google Earth Engine
-- GIS
-- Remote Sensing
-- Weather Intelligence
-- Precision Agriculture
-
-to support data-driven agricultural decision making.
-"""
-    )
-
-# ----------------------------------------------------
-# FARM INPUT
-# ----------------------------------------------------
-
-elif selected == "Farm Input":
-
-    st.title("Farm Input")
-
-    st.info("Farm Input page will be developed in Sprint 2.")
-
-# ----------------------------------------------------
-# ANALYSIS CENTER
-# ----------------------------------------------------
+    render_input_module()
 
 elif selected == "Analysis Center":
 
-    st.title("Analysis Center")
+    run_full_analysis()
 
-    st.info("Analysis Center will be developed in Sprint 3.")
+elif selected == "AI Advisor":
 
-# ----------------------------------------------------
-# REPORTS
-# ----------------------------------------------------
+    render_ai_recommendation()
 
 elif selected == "Reports":
 
-    st.title("Reports")
-
-    st.info("Report Generation module will be developed later.")
-
-# ----------------------------------------------------
-# SETTINGS
-# ----------------------------------------------------
-
-elif selected == "Settings":
-
-    st.title("Settings")
-
-    st.info("Settings page coming soon.")
+    generate_report()
