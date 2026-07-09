@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 
 from modules.input_module import render_input_module
 from modules.analysis_engine import run_full_analysis
+from modules.dashboard import render_dashboard
 from modules.report_generator import generate_report
 from modules.ai_recommendation import render_ai_recommendation
 
@@ -52,6 +53,7 @@ with st.sidebar:
         options=[
             "Farm Management",
             "Analysis Center",
+            "Dashboard",
             "AI Advisor",
             "Reports"
         ],
@@ -108,6 +110,10 @@ if selected == "Farm Management":
 elif selected == "Analysis Center":
 
     run_full_analysis()
+
+elif selected == "Dashboard":
+
+    render_dashboard()
 
 elif selected == "AI Advisor":
 
